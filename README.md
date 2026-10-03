@@ -26,7 +26,7 @@ I'm a BCA student and MERN developer learning DevOps in public. Every day I watc
 | Day | Topic | Notes |
 |-----|-------|-------|
 | 01 | DevOps fundamentals | [Read notes](01-foundations/day-01/README.md) |
-| 02 | SDLC and Agile | [Read notes](01-foundations/day-02/README.md) |
+| 02 | SDLC, Agile and the DevOps lifecycle | [Read notes](01-foundations/day-02/README.md) |
 
 ## 🧰 What I'll build
 
