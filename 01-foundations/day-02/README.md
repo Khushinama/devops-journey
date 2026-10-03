@@ -1,4 +1,4 @@
-# Day 02 · SDLC and Agile
+# Day 02 · SDLC, Agile and the DevOps Lifecycle
 
 📅 **Date:** 03 Oct 2026 · ⏱️ **Time:** ~2 hrs · 🎥 **Source:** Abhishek Veeramalla, "Day-2 | Improve SDLC with DevOps" + self-study
 
@@ -159,6 +159,76 @@ Agile made **planning and building** faster. But code still waited on slow, manu
 - [ ] Choose 3 cards for a **2-week mini sprint** and move them to In Progress
 - [ ] Write one user story in the format *As a [user], I want [feature], so that [benefit]*
 
+
+---
+
+# 🔁 Part 2 · The DevOps Lifecycle (Day 03)
+
+## 8. What is the DevOps lifecycle?
+
+The DevOps lifecycle is the set of **8 stages** that code goes through, from an idea to running in production. It is a **continuous loop**, not a straight line, because feedback from running software feeds back into planning.
+
+```mermaid
+flowchart LR
+    Plan --> Code --> Build --> Test --> Release --> Deploy --> Operate --> Monitor
+    Monitor -. feedback .-> Plan
+```
+
+## 9. The 8 stages explained
+
+Example feature: **"Favorite outfit"** in a wardrobe app.
+
+| # | Stage | What happens | Example |
+|---|-------|--------------|---------|
+| 1 | **Plan** | Decide what to build, who builds it and by when | Trello card: "User can mark an outfit as favorite" |
+| 2 | **Code** | Write the feature and save it in Git | React button and Node API, then `git push` |
+| 3 | **Build** | Turn the code into a runnable package | Source code becomes an app or Docker image |
+| 4 | **Test** | Check that nothing is broken | Automated tests: "Does the favorite button work?" |
+| 5 | **Release** | Approve a tested version for users | Version `v1.2` is tagged after tests pass |
+| 6 | **Deploy** | Put the version on servers | New version goes live on the server |
+| 7 | **Operate** | Keep it running: servers, scaling, security | Capacity grows when traffic rises |
+| 8 | **Monitor** | Watch performance, errors and uptime | Dashboard and alerts show the button is slow |
+
+Monitoring feedback ("the button is slow") becomes the next **Plan**, and the loop continues.
+
+## 10. Tools for each stage (preview)
+
+| Stage | Example tools | Covered in |
+|-------|---------------|------------|
+| Plan | Jira, Trello | Phase 1 |
+| Code | Git, GitHub | Phase 4 |
+| Build | npm, Docker | Phase 6 |
+| Test | Jest, Selenium | Phase 7 |
+| Release | GitHub Actions, Jenkins | Phase 7 |
+| Deploy | Docker, Kubernetes, Terraform | Phases 5, 6, 8, 9 |
+| Operate | Linux, AWS, Kubernetes | Phases 2, 5, 9 |
+| Monitor | Prometheus, Grafana, CloudWatch | Phase 10 |
+
+The whole roadmap is this lifecycle, learned one stage at a time.
+
+## 11. CI and CD
+
+| Term | Full form | What it does | Stages automated |
+|------|-----------|--------------|------------------|
+| **CI** | Continuous Integration | Automatically builds and tests code on every push | Code → Build → Test |
+| **CD** | Continuous Delivery / Deployment | Automatically releases and deploys tested code | Release → Deploy |
+
+> **CI** = merge and test code often. **CD** = deliver tested code to users automatically.
+
+## 12. Why the lifecycle matters
+
+1. **Find bottlenecks:** if deployment takes two days, that stage needs automation.
+2. **Shared language:** "it failed at the test stage" tells everyone where the problem is.
+3. **Automation targets:** look at each stage and ask what is still manual.
+
+## 13. Interview answers (Day 03)
+
+**Q: Explain the DevOps lifecycle.**
+> "The DevOps lifecycle is a continuous loop of eight stages: plan, code, build, test, release, deploy, operate and monitor. Code is planned and written, built into an artifact, tested automatically, released, deployed to servers, operated in production and monitored. Monitoring feedback goes back into planning, so the product keeps improving."
+
+**Q: What is CI/CD?**
+> "CI automatically builds and tests code on every commit. CD automatically releases and deploys the tested code to environments, so delivery is fast and repeatable."
+
 ## ✅ Key takeaways
 
 1. SDLC is the 7-step journey of software, from planning to maintenance.
@@ -166,6 +236,8 @@ Agile made **planning and building** faster. But code still waited on slow, manu
 3. Scrum uses sprints, backlogs, daily standups, a review and a retrospective.
 4. Kanban is a continuous-flow board: To Do, In Progress, Done.
 5. Agile speeds up development. DevOps speeds up delivery and operations.
+6. 6. The DevOps lifecycle has 8 stages (plan, code, build, test, release, deploy, operate, monitor) and runs as a continuous loop.
+7. CI automates build and test. CD automates release and deploy.
 
 
-⬅️ [Day 01](../day-01/README.md) · 🏠 [Main README](../../README.md) · ➡️ Next: Day 03, the DevOps lifecycle
+⬅️ [Day 01](../day-01/README.md) · 🏠 [Main README](../../README.md) · ➡️ Next: Day 03, Environments and Architecture
