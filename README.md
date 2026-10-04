@@ -9,8 +9,8 @@ I'm a BCA student and MERN developer learning DevOps in public. Every day I watc
 
 | # | Phase | Weeks | Dates | Status |
 |---|-------|-------|-------|--------|
-| 1 | Foundations | 1 | 2 – 8 Oct | 🟡 In progress |
-| 2 | Linux and Bash scripting | 2–4 | 9 – 29 Oct | ⬜ Planned |
+| 1 | Foundations | 1 | 2 – 4 Oct | ✔️ Done |
+| 2 | Linux and Bash scripting | 1-3 | 5 – 29 Oct | ⬜ Planned |
 | 3 | Networking and security basics | 5 | 30 Oct – 5 Nov | ⬜ Planned |
 | 4 | Git and GitHub | 6 | 6 – 12 Nov | ⬜ Planned |
 | 5 | AWS core and deployment | 7–10 | 13 Nov – 10 Dec | ⬜ Planned |
