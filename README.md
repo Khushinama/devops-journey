@@ -27,6 +27,7 @@ I'm a BCA student and MERN developer learning DevOps in public. Every day I watc
 |-----|-------|-------|
 | 01 | DevOps fundamentals | [Read notes](01-foundations/day-01/README.md) |
 | 02 | SDLC, Agile and the DevOps lifecycle | [Read notes](01-foundations/day-02/README.md) |
+| 03 | Environments, monolith vs microservices | [Read notes](01-foundations/day-03/README.md) |
 
 ## 🧰 What I'll build
 
@@ -40,6 +41,7 @@ devops-journey/
 ├── 01-foundations/
 │   └── day-01/README.md
     └── day-02/README.md
+    └── day-03/README.md
 ├── 02-linux/
 └── ...
 ```
