@@ -10,7 +10,7 @@ I'm a BCA student and MERN developer learning DevOps in public. Every day I watc
 | # | Phase | Weeks | Dates | Status |
 |---|-------|-------|-------|--------|
 | 1 | Foundations | 1 | 2 – 4 Oct | ✔️ Done |
-| 2 | Linux and Bash scripting | 1-3 | 5 – 29 Oct | ⬜ Planned |
+| 2 | Linux and Bash scripting | 1-3 | 5 – 29 Oct |  In Progress |
 | 3 | Networking and security basics | 5 | 30 Oct – 5 Nov | ⬜ Planned |
 | 4 | Git and GitHub | 6 | 6 – 12 Nov | ⬜ Planned |
 | 5 | AWS core and deployment | 7–10 | 13 Nov – 10 Dec | ⬜ Planned |
@@ -28,6 +28,8 @@ I'm a BCA student and MERN developer learning DevOps in public. Every day I watc
 | 01 | DevOps fundamentals | [Read notes](01-foundations/day-01/README.md) |
 | 02 | SDLC, Agile and the DevOps lifecycle | [Read notes](01-foundations/day-02/README.md) |
 | 03 | Environments, monolith vs microservices | [Read notes](01-foundations/day-03/README.md) |
+| 04 | Linux basics and filesystem | [Read notes](02-linux/day-04/README.md)  |
+
 
 ## 🧰 What I'll build
 
@@ -43,6 +45,7 @@ devops-journey/
     └── day-02/README.md
     └── day-03/README.md
 ├── 02-linux/
+    └── day-04/README.md
 └── ...
 ```
 
