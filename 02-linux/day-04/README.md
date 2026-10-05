@@ -204,15 +204,106 @@ drwxr-xr-x 2 khushi khushi 4096 Oct 5 10:25 linux-practice
 
 ---
 
-## 🛠️ Practical: completed in Ubuntu (WSL)
+## ✏️ Vim basics
 
-- [x] Created `linux-practice` and moved into it
-- [x] Created `notes.txt` and wrote text with `echo`
-- [x] Read it with `cat`
-- [x] Copied with `cp` and renamed with `mv`
-- [x] Listed with `ls -l`
-- [x] Deleted a file with `rm`
-- [x] Moved back with `cd ..` and checked with `pwd`
+Vim is a terminal text editor with two main modes.
+
+| Mode | Purpose | How to enter |
+|------|---------|--------------|
+| **Normal** | Run commands, no typing. Vim opens here | Press `Esc` |
+| **Insert** | Type text | Press `i` |
+
+| Command (in Normal mode) | Purpose |
+|--------------------------|---------|
+| `i` | Start typing (Insert mode) |
+| `:w` | Save |
+| `:q` | Quit |
+| `:wq` | Save and quit |
+| `:q!` | Quit without saving |
+| `dd` | Delete a line |
+| `u` | Undo |
+| `/word` | Search for a word |
+| `:set number` | Show line numbers |
+
+> If stuck inside Vim: press `Esc` twice, then type `:q!` and press Enter. `nano` is a simpler alternative (Ctrl + O to save, Ctrl + X to exit).
+
+---
+
+## 🛠️ Practicals (completed in Ubuntu on WSL)
+
+### Practical 1 · Build a project folder structure
+
+```bash
+mkdir -p devops-lab/app devops-lab/logs devops-lab/notes
+cd devops-lab/app
+touch server.js README.md
+echo "console.log('Hello DevOps');" > server.js
+echo "# My App" > README.md
+echo "Runs on port 5000" >> README.md
+cd ../logs
+touch app.log
+echo "App started" >> app.log
+echo "Request received" >> app.log
+wc -l app.log
+cd ~/devops-lab && ls -R
+```
+
+**Learned:** `mkdir -p` creates nested folders. `>` overwrites a file and `>>` appends to it. `ls -R` lists folders recursively.
+
+### Practical 2 · Copy, move, rename and delete
+
+```bash
+cp app/server.js app/server-backup.js      # copy a file
+cp -r app app-copy                          # copy a folder
+mv app-copy app-v2                          # rename
+mv app/server-backup.js notes/              # move
+rm notes/server-backup.js                   # delete a file
+rm -r app-v2                                # delete a folder
+rm -i temp.txt                              # delete with confirmation
+```
+
+**Learned:** `mv` both moves and renames. Folders need `-r` to copy or delete. `rm` has no undo, so `rm -i` and checking `pwd` first are good habits.
+
+### Practical 3 · Reading files
+
+```bash
+seq 1 20 > numbers.txt
+head -n 3 numbers.txt
+tail -n 3 numbers.txt
+less numbers.txt            # press q to quit
+wc -l numbers.txt
+cat /etc/os-release
+tail -f logs/app.log        # live log view, Ctrl + C to stop
+```
+
+**Learned:** `head` and `tail` show the start and end of a file, `less` pages through long files, `wc -l` counts lines, and `tail -f` follows a log live, which is how real server issues are watched.
+
+### Practical 4 · Mini challenge
+
+Built a `challenge` project with `src`, `config`, `logs` and `backup`, then:
+
+- Wrote `main.js` in Vim
+- Created `settings.txt` with `echo`
+- Generated a 12-line `server.log` with `seq` and two `ERROR` lines
+- Used `head`, `tail` and `wc -l` on the log
+- Backed up files with `cp` and `cp -r`, renamed with `mv`, and deleted with `rm`
+- Verified the final structure with `ls -R`
+
+```text
+challenge/
+├── backup/   settings.bak  src-copy/helpers.js
+├── config/   settings.txt
+├── logs/     server.log
+└── src/      helpers.js  main.js
+```
+
+### Checklist
+
+- [x] Practical 1: folder structure
+- [x] Practical 2: copy, move, rename, delete
+- [x] Practical 3: reading files and live logs
+- [x] Practical 4: mini challenge
+- [x] Wrote and saved a file in Vim
 
 ## ✅ Key takeaways
 
