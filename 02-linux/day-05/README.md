@@ -180,13 +180,71 @@ A group is a set of users that share access to files.
 
 ---
 
-## 🛠️ Practicals
+## 🛠️ Practicals (completed in Ubuntu on WSL)
 
-- [ ] Practical 1: create and delete users
-- [ ] Practical 2: install and remove software with apt
-- [ ] Practical 3: change permissions with chmod
-- [ ] Practical 4: groups and a mini challenge
+### Practical 1 · Users
 
+```bash
+whoami && id
+sudo adduser testuser
+id testuser
+tail -n 2 /etc/passwd
+su - testuser              # switch user, then 'exit' once to return
+sudo passwd devuser        # change a password
+sudo deluser --remove-home devuser
+```
+
+**Learned:** a new user has no admin power, so `sudo` fails for them ("not in the sudoers file"). `adduser` creates the home folder, and `--remove-home` removes it on deletion.
+
+### Practical 2 · Package management with apt
+
+```bash
+sudo apt update
+apt show tree
+sudo apt install tree
+sudo apt install htop
+sudo apt remove tree
+sudo apt autoremove
+apt list --installed | wc -l      # about 554 packages installed
+```
+
+**Learned:** `update` refreshes the package list, `install` and `remove` change software, and `|` (pipe) passes one command's output to another.
+
+### Practical 3 · Permissions
+
+```bash
+chmod 600 notes.txt        # -rw-------
+chmod 755 notes.txt        # -rwxr-xr-x
+chmod 000 notes.txt        # Permission denied, even for the owner
+chmod +x hello.sh          # allow ./hello.sh to run
+chmod g+w notes.txt        # symbolic form
+chmod 000 secret-dir       # cannot cd into it without x
+sudo chown testuser file   # change owner
+```
+
+**Learned:** a script needs the execute bit to run, a directory needs `x` to be entered, and `600` hides a file from other users while `644` lets them read it. Tested with `testuser` in `/tmp`.
+
+### Practical 4 · Groups and mini challenge
+
+```bash
+sudo groupadd devteam
+sudo usermod -aG devteam testuser
+sudo chgrp devteam /tmp/team-share
+sudo chmod 770 /tmp/team-share
+sudo gpasswd -d testuser devteam     # remove from group, access is lost
+```
+
+**Mini challenge:** created a `deployer` user and a `webteam` group, then a `/tmp/website` folder (mode 750) with `index.html` (640) and an executable `deploy.sh` (750).
+
+**Lesson learned:** `deploy.sh` failed with *Permission denied* for `deployer`. Cause: `chgrp -R` only changes files that already exist, and a new file takes the **creator's group**, not the folder's. Fixed with `sudo chgrp webteam /tmp/website/deploy.sh`. Using `chmod g+s` on a folder (setgid) makes new files inherit the folder's group.
+
+### Checklist
+
+- [✔️] Practical 1: users and sudo
+- [✔️] Practical 2: apt install, remove, autoremove
+- [✔️] Practical 3: chmod and chown
+- [✔️] Practical 4: groups, shared folder, mini challenge
+- [✔️] Cleaned up test users, groups and `/tmp` folders
 ## ✅ Key takeaways
 
 1. Linux is multi-user: root, normal and system users.
