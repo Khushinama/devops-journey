@@ -30,6 +30,7 @@ I'm a BCA student and MERN developer learning DevOps in public. Every day I watc
 | 03 | Environments, monolith vs microservices | [Read notes](01-foundations/day-03/README.md) |
 | 04 | Linux basics and filesystem | [Read notes](02-linux/day-04/README.md)  |
 | 05 | Linux users, packages and permissions | [Read notes](02-linux/day-05/README.md)  |
+| 06 | Linux processes, environment and archives | [Read notes](02-linux/day-06/README.md)  |
 
 
 ## 🧰 What I'll build
@@ -48,6 +49,7 @@ devops-journey/
 ├── 02-linux/
     └── day-04/README.md
     └── day-05/README.md
+    └── day-06/README.md
 └── ...
 ```
 
